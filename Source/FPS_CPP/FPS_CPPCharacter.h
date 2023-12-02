@@ -39,15 +39,25 @@ class AFPS_CPPCharacter : public ACharacter
 	/** Move Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	class UInputAction* MoveAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* LowerAction;
 	
 	UPROPERTY(EditAnywhere)
 	ASensor* sensor;
 
-	
+	 void SimulateProjectileTrajectory(float DeltaTime);
 
 	
 public:
 	AFPS_CPPCharacter();
+
+
+
+
+
+
+
 
 protected:
 	virtual void BeginPlay();
@@ -87,6 +97,8 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	void Lower(FInputActionValue& Value);
 
 protected:
 	// APawn interface

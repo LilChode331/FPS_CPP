@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "TP_WeaponComponent.generated.h"
 #include"DrawDebugHelpers.h"
 
 
@@ -35,6 +36,11 @@ AFPS_CPPCharacter::AFPS_CPPCharacter()
 	Mesh1P->CastShadow = false;
 	//Mesh1P->SetRelativeRotation(FRotator(0.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
+
+
+
+
+
 
 }
 
@@ -75,6 +81,13 @@ void AFPS_CPPCharacter::Tick(float DeltaTime)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 15, FColor::Cyan, TEXT("Hit"));
 	}
+
+
+
+
+
+
+
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -93,8 +106,20 @@ void AFPS_CPPCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerI
 
 		//Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AFPS_CPPCharacter::Look);
+
+
 	}
 }
+
+
+
+
+
+
+
+
+
+
 
 
 void AFPS_CPPCharacter::Move(const FInputActionValue& Value)
